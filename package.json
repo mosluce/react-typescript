@@ -10,10 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/lodash": "^4.14.37",
     "@types/react": "^0.14.43",
     "@types/react-dom": "^0.14.18",
     "@types/react-redux": "^4.4.32",
     "@types/redux": "^3.6.31",
+    "lodash": "^4.16.4",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-redux": "^4.4.5",
@@ -21,6 +23,8 @@
   },
   "devDependencies": {
     "@types/node": "^6.0.46",
+    "@types/react-redux": "^4.4.32",
+    "@types/redux": "^3.6.31",
     "@types/webpack": "^1.12.35",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.24.0",

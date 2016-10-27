@@ -17,7 +17,7 @@ module.exports = {
 
     module: {
         loaders: [{
-            test: /\.tsx$/,
+            test: /\.(tsx|ts)$/,
             loader: 'ts'
         }],
         preLoaders: [{
