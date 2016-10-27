@@ -1,0 +1,28 @@
+{
+  "name": "react-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^0.14.43",
+    "@types/react-dom": "^0.14.18",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.46",
+    "@types/webpack": "^1.12.35",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "html-webpack-plugin": "^2.24.0",
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.9.5",
+    "typescript": "^2.0.6",
+    "webpack": "^1.13.3"
+  }
+}
