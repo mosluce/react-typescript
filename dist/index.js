@@ -47,8 +47,8 @@
 	"use strict";
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(34);
-	var Hello_1 = __webpack_require__(172);
-	ReactDOM.render(React.createElement(Hello_1.Hello, {compiler: "TypeScript", framework: "React"}), document.getElementById('example'));
+	var App_1 = __webpack_require__(172);
+	ReactDOM.render(React.createElement(App_1.App, null), document.getElementById('example'));
 
 
 /***/ },
@@ -21429,21 +21429,114 @@
 	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 	};
 	var React = __webpack_require__(1);
-	var Hello = (function (_super) {
-	    __extends(Hello, _super);
-	    function Hello() {
+	var Header_1 = __webpack_require__(173);
+	var TodoList_1 = __webpack_require__(174);
+	var Component = React.Component;
+	var App = (function (_super) {
+	    __extends(App, _super);
+	    function App(props) {
+	        _super.call(this, props);
+	        this.state = {
+	            todos: []
+	        };
+	    }
+	    App.prototype.addTodo = function (title) {
+	        var todos = this.state.todos;
+	        todos.push({
+	            completed: false,
+	            key: todos.length + 1,
+	            title: title
+	        });
+	        this.setState({ todos: todos });
+	    };
+	    App.prototype.toggle = function (key) {
+	        var todos = this.state.todos;
+	        todos = todos.map(function (todo) {
+	            if (todo.key === key) {
+	                todo.completed = !todo.completed;
+	            }
+	            return todo;
+	        });
+	        this.setState({ todos: todos });
+	    };
+	    App.prototype.render = function () {
+	        var _this = this;
+	        return (React.createElement("div", null, 
+	            React.createElement(Header_1.Header, {title: "代辦事項", username: "默司", addTodo: function (title) { return _this.addTodo(title); }}), 
+	            React.createElement(TodoList_1.TodoList, {todos: this.state.todos, toggle: function (key) { return _this.toggle(key); }})));
+	    };
+	    return App;
+	}(Component));
+	exports.App = App;
+
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __extends = (this && this.__extends) || function (d, b) {
+	    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+	    function __() { this.constructor = d; }
+	    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+	};
+	var React = __webpack_require__(1);
+	var Component = React.Component;
+	var Header = (function (_super) {
+	    __extends(Header, _super);
+	    function Header() {
 	        _super.apply(this, arguments);
 	    }
-	    Hello.prototype.render = function () {
-	        return (React.createElement("h1", null, 
-	            "Hello from ", 
-	            this.props.compiler, 
-	            "and ", 
-	            this.props.framework));
+	    Header.prototype.render = function () {
+	        var _this = this;
+	        return (React.createElement("div", null, 
+	            React.createElement("h2", null, this.props.title), 
+	            React.createElement("div", null, 
+	                "你好，", 
+	                this.props.username), 
+	            React.createElement("input", {type: "text", ref: function (titleField) { return _this.titleField = titleField; }}), 
+	            React.createElement("button", {onClick: function () {
+	                _this.props.addTodo(_this.titleField.value);
+	                _this.titleField.value = '';
+	            }}, "新增")));
 	    };
-	    return Hello;
-	}(React.Component));
-	exports.Hello = Hello;
+	    return Header;
+	}(Component));
+	exports.Header = Header;
+
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var __assign = (this && this.__assign) || Object.assign || function(t) {
+	    for (var s, i = 1, n = arguments.length; i < n; i++) {
+	        s = arguments[i];
+	        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+	            t[p] = s[p];
+	    }
+	    return t;
+	};
+	var React = __webpack_require__(1);
+	var TodoItem_1 = __webpack_require__(175);
+	var Component = React.Component;
+	exports.TodoList = function (props) { return (React.createElement("div", null, 
+	    React.createElement("ul", null, props.todos.map(function (todo) { return (React.createElement(TodoItem_1.TodoItem, __assign({}, todo, {onClick: function () { return props.toggle(todo.key); }}))); }))
+	)); };
+
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var React = __webpack_require__(1);
+	var Component = React.Component;
+	exports.TodoItem = function (props) { return (React.createElement("li", {style: {
+	    textDecoration: props.completed ? 'line-through' : 'none',
+	    cursor: 'point'
+	}, onClick: function () { return props.onClick(); }}, props.title)); };
 
 
 /***/ }
