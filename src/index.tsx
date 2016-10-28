@@ -1,15 +1,23 @@
 import React = require('react');
 import ReactDOM = require('react-dom');
 import { AppContainer } from 'react-hot-loader';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { todoApp } from './reducers';
 
+let store = createStore(todoApp);
 let elem = document.querySelector('#app');
+
+console.log(store.getState());
 
 function updateRender() {
     const App = require('./components').App;
 
     return ReactDOM.render(
         <AppContainer>
-            <App />
+            <Provider store={store}>
+                <App />
+            </Provider>
         </AppContainer>,
         elem
     )

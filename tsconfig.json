@@ -6,7 +6,8 @@
         "jsx": "react",
         "outDir": "dist",
         "rootDir": "src",
-        "noImplicitAny": false
+        "noImplicitAny": false,
+        "experimentalDecorators": true
     },
     "exclude": [
         "node_modules"

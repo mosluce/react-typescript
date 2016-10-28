@@ -5,6 +5,7 @@ declare module "webpack-dev-middleware" {
         (req: express.Request, res: express.Response, next: express.NextFunction) => any;
     export = webpackDevMiddleware;
 }
+
 declare module "webpack-hot-middleware" {
     import express = require("express");
     import webpack = require("webpack");
@@ -12,6 +13,7 @@ declare module "webpack-hot-middleware" {
         (req: express.Request, res: express.Response, next: express.NextFunction) => any;
     export = webpackHotMiddleware;
 }
+
 declare module 'react-hot-loader' {
     import React = require('react');
 
