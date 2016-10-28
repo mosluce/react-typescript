@@ -10,7 +10,7 @@ export class Header extends Component<HeaderProperties, HeaderState> {
     render() {
         return (
             <div>
-                Hi Header
+                Hi
             </div>
         )
     }

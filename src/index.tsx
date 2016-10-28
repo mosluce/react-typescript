@@ -1,23 +1,24 @@
 import React = require('react');
-import { render } from 'react-dom';
+import ReactDOM = require('react-dom');
 import { AppContainer } from 'react-hot-loader';
-import { App } from './components';
 
-render(
-    <AppContainer>
-        <App />
-    </AppContainer>,
-    document.querySelector('#app')
-)
+let elem = document.querySelector('#app');
 
+function updateRender() {
+    const App = require('./components').App;
+
+    return ReactDOM.render(
+        <AppContainer>
+            <App />
+        </AppContainer>,
+        elem
+    )
+}
+
+updateRender();
 
 if ((module as any).hot) {
     (module as any).hot.accept(
         './components',
-        () => render(
-            <AppContainer>
-                <App />
-            </AppContainer>,
-            document.querySelector('#app')
-        ))
+        () => updateRender())
 }
