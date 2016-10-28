@@ -19,7 +19,7 @@ if (app.get('env') === 'development') {
     app.use(webpackHotMiddleware(compiler));
 }
 
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/', express.static(path.join(__dirname, 'dist')));
 
 let port = process.env.PORT || 3000;
 
