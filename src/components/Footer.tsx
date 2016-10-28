@@ -5,11 +5,12 @@ import { setVisibility } from '../actions';
 const {Component} = React;
 
 export interface FooterProperties {
-    visibilityFilter: Todo.VisibilityFilter
+    visibilityFilter?: Todo.VisibilityFilter
+
     dispatch?(action: Todo.Action)
 }
 
-function map(state: Todo.State, props: FooterProperties) {
+function map(state: Todo.State, props: FooterProperties): FooterProperties {
     return {
         visibilityFilter: state.visibilityFilter
     }

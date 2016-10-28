@@ -14,7 +14,7 @@ export class TodoItem extends Component<TodoItemProperties, TodoItemState> {
         return (
             <li onClick={onClick}
                 style={{
-                    cursor: 'point',
+                    cursor: 'pointer',
                     textDecoration: completed ? 'line-through' : 'none'
                 }}>
                 {text}

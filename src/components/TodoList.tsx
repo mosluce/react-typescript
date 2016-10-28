@@ -7,12 +7,12 @@ import { TodoItem } from './TodoItem';
 const {Component} = React;
 
 export interface TodoListProperties {
-    todos: Todo.Item[]
+    todos?: Todo.Item[]
 
     dispatch?(action: Todo.Action)
 }
 
-function map(state: Todo.State, props: TodoListProperties) {
+function map(state: Todo.State, props: TodoListProperties): TodoListProperties {
     let todos: Todo.Item[];
 
     switch (state.visibilityFilter) {
@@ -38,7 +38,7 @@ export class TodoList extends Component<TodoListProperties, React.ComponentState
         return (
             <ul>
                 {todos.map((todo, index) => (
-                    <TodoItem {...todo} onClick={() => dispatch(toggleTodo(index))} />
+                    <TodoItem key={index} {...todo} onClick={() => dispatch(toggleTodo(index))} />
                 ))}
             </ul>
         )

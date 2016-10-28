@@ -8,8 +8,6 @@ import { todoApp } from './reducers';
 let store = createStore(todoApp);
 let elem = document.querySelector('#app');
 
-console.log(store.getState());
-
 function updateRender() {
     const App = require('./components').App;
 
