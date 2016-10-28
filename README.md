@@ -5,5 +5,5 @@
   1. 簡單的 React 程式 (√)
   2. TodoList (√)
   3. 導入 Redux (√)
-  4. 導入 express dev server
+  4. 導入 Express Dev Server (with HMR) (√)
   5. Universal
