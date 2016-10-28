@@ -12,3 +12,12 @@ declare module "webpack-hot-middleware" {
         (req: express.Request, res: express.Response, next: express.NextFunction) => any;
     export = webpackHotMiddleware;
 }
+declare module 'react-hot-loader' {
+    import React = require('react');
+
+    interface AppContainerProps {
+        children?: React.ReactElement<any>
+    }
+
+    export class AppContainer extends React.Component<AppContainerProps, {}> { }
+}
