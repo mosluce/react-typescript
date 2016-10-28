@@ -19,6 +19,10 @@ exports.config = {
         loaders: [{
                 test: /\.(ts|tsx)$/,
                 loaders: ["react-hot-loader/webpack", "ts"]
+            }],
+        preLoaders: [{
+                test: '/\.js$/',
+                loaders: ["source-map"]
             }]
     },
     plugins: [
@@ -26,6 +30,7 @@ exports.config = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, '../src/client/index.html')
         })
-    ]
+    ],
+    devtool: 'cheap-module-source-map'
 };
 //# sourceMappingURL=webpack.config.dev.js.map

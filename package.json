@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/server.js",
-    "prestart": "tsc"
+    "prestart": "npm run build && rm -rf dist/client",
+    "build": "tsc",
+    "prebuild": "rm -rf dist"
   },
   "keywords": [],
   "author": "",

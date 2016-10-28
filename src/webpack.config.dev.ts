@@ -22,6 +22,10 @@ export const config: webpack.Configuration = {
         loaders: [{
             test: /\.(ts|tsx)$/,
             loaders: ["react-hot-loader/webpack", "ts"]
+        }],
+        preLoaders: [{
+            test: '/\.js$/',
+            loaders: ["source-map"]
         }]
     },
 
@@ -30,5 +34,7 @@ export const config: webpack.Configuration = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, '../src/client/index.html')
         })
-    ]
+    ],
+
+    devtool: 'cheap-module-source-map'
 }
